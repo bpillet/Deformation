@@ -1,2 +1,2 @@
 # Deformation
-Some notes on deformation theory (in french)
+Un théorème de complétude de théorie de la déformation à la Kodaira-Spencer.
