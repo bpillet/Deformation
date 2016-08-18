@@ -1,0 +1,106 @@
+% Created 2016-08-18 jeu. 12:51
+\documentclass[a4paper]{article}
+                 \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/dipneuste}
+                 \usepackage[utf8x]{inputenc}
+                 \usepackage[T1]{fontenc}
+                 \usepackage{ulem}
+                          \DeclareMathOperator\Ii{\mathcal{I}}
+\DeclareMathOperator\rk{rk}
+\DeclareMathOperator{\zzb}{\zeta\bar\zeta}
+\DeclareMathOperator{\II}{\mathbb{I}}
+\DeclareMathOperator{\VVv}{\mathcal{V}}
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollaire}
+\newtheorem{lem}{Lemme}
+\DeclareMathOperator{\cycles}{Cycles}
+\DeclareMathOperator{\Sec}{Sec}
+\hypersetup{colorlinks=true, linkcolor=DarkBlue}
+\geometry{a4paper,left=9em,right=9em,top=8em,bottom=7em}
+\setcounter{secnumdepth}{3}
+\date{}
+\title{Préservation du fibré normal par déformation}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Préservation du fibré normal par déformation},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.3.1 (Org mode 8.3.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Notations}
+\label{sec:orgheadline1}
+Soit \(Z\) une variété complexe, \((L(t))_{\in \Delta}\) un famille de déformations de \(L = L(0)\).
+
+On recouvre \(Z\) par des ouverts \(Z_a\) de trace \(L_a\) sur \(L\). On peut supposer que \(Z_a\) est un polydique de \(\C^n\) avec coordonnées \((v_a,w_a)\) et \(L_a\) est défini par l'équation \(w_a = 0\). Les \(v_a\) sont alors des coordonnées locales sur \(L\).
+
+Quitte à restreindre \(\Delta\), on peut supposer que \(L(t)\) a pour équation
+\[
+w_a = \varphi_a(v_a,t)
+\]
+dans \(Z_a\). Les \(v_a\) sont donc également des coordonnées locales sur \(L(t)\).
+
+On se donne les changements de carte de \(Z\) sous la forme
+\begin{align}
+v_b &= f_{ba}(v_a,w_a)\\
+w_b &= g_{ba}(v_a,w_a)
+\end{align}
+
+En particulier, les changements de carte de \(L\) sont donnés par
+\[
+v_b = f_{ba}(v_a,0)
+\]
+et ceux de \(L(t)\) par
+\[
+v_b = f_{ba}(v_a,\varphi_a(v_a,t))
+\]
+
+\section{Fibré normal}
+\label{sec:orgheadline2}
+Toujours sur l'hypothèse de petitesse de \(\Delta\), les coordonnées \(w_a\) sont des coordonnées locales sur \(Z\) transverses à tous les \(L(t)\).
+
+Leurs changements de carte au dessus d'un point de coordonnée \(v_a\) de \(L\) est donné par la relation
+\[
+w_b = g_{ba}(v_a,w_a)
+\]
+
+Ainsi les cocycles de Cech \(\epsilon_{ba}(v,t)\) qui définissent les changements de trivialisation du fibré normal de \(L(t)\) dans \(Z\) sont donnés par
+\[
+\epsilon_{ba}(v_a,t) = \dpp{g_{ba}}{w}(v_a,\varphi(v_a,t))
+\]
+
+On veut construire un isomorphisme entre le fibré normal à \(L(t)\) et le fibré normal à \(L\). Pour cela il suffit de relier \(\epsilon_\bullet(t)\) et \(\epsilon_\bullet(0)\) par un cobord, plus précisément, on cherche à résoudre
+\begin{equation}
+\label{cobord}
+\epsilon_{ba}(v_a,t)\alpha_a(v_a,t) = \alpha_b(v_b,t)\epsilon_{ba}(v_b,0)
+\end{equation}
+d'inconnue \(\alpha_\bullet(v,t)\) matrice inversible.
+
+\section{Développement en série entière}
+\label{sec:orgheadline3}
+
+À l'ordre \(0\) en \(t\) la relation \eqref{cobord} nous donne
+\(\alpha_\bullet(v,0) = \Id\).
+
+À l'ordre \(1\), on trouve
+\[
+(\partial_t\epsilon_{ba})(v_a,0) + \epsilon_{ba}(v_a,0)(\partial_t \alpha_a)(v_a,0)  = (\partial_t \alpha_b)(v_b,0)\epsilon_{ba}(v_a,0)
+\]
+ou encore
+\[
+(\partial_t \alpha_b)(v_b,0) = (\partial_t \alpha_a)(v_a,0) + \epsilon_{ba}(v_a,0)^{-1}(\partial_t\epsilon_{ba})(v_a,0)
+\]
+
+À l'ordre \(k\), avec la notation des indices implicites
+\[
+(\partial^k_t \alpha_b) = (\partial^k_t \alpha_a) + \epsilon_{ba}^{-1}\left(
+k \partial^{k-1}_t \alpha_a\partial_t \epsilon_{ba} + \cdots  + \partial^k_t\epsilon_{ba}\right)
+\] 
+où tout est évalué en \((v,0)\).
+
+On peut imposer \(\alpha_{0}(v,t) = \Id\) pour tout \(v,t\) et par connexité, la relation précédente définie entièrement \(\alpha_\bullet\) sur \(L \times \Delta\).
+\end{document}
