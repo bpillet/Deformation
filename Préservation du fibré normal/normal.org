@@ -13,6 +13,7 @@
 #+LATEX_HEADER: \newtheorem{lem}{Lemme}
 #+LATEX_HEADER: \DeclareMathOperator{\cycles}{Cycles}
 #+LATEX_HEADER: \DeclareMathOperator{\Sec}{Sec}
+#+LATEX_HEADER: \DeclareMathOperator\uu{\underline{u}}
 #+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=DarkBlue}
 #+LATEX_HEADER: \geometry{a4paper,left=9em,right=9em,top=8em,bottom=7em}
 # #+LATEX_HEADER: \usepackage[inline]{showlabels}
@@ -91,3 +92,26 @@ k \partial^{k-1}_t \alpha_a\partial_t \epsilon_{ba} + \cdots  + \partial^k_t\eps
 où tout est évalué en $(v,0)$.
 
 On peut imposer $\alpha_{0}(v,t) = \Id$ pour tout $v,t$ et par connexité, la relation précédente définie entièrement $\alpha_\bullet$ sur $L \times \Delta$.
+
+* Convergence
+
+On voudrait une propriété du genre, pour tout $t \in \Delta$ et pour tout $a$, pour tout $v = v_a \in L_a$
+\[
+\alpha_a(v,t) \ll A(t)
+\]
+où
+\[
+A(t) = \dfrac{\lambda}{16\chi}\sum_{s \geq 1} \dfrac{\chi}{s^2}(t_1 + \cdots + t_{4n})^s = \sum_{\uu \in \N^{4n}} A_{\uu} t^{\uu}
+\]
+
+
+- Le fait d'avoir $t$ de dimension $4n$ ... est perturbant, ce n'est pas ce que je cherchais à faire au début. D'autre part c'est peut-être la meilleur chose à faire pour avoir uniformité de la convergence dans toutes les directions.
+
+En dim $1$ ((réelle ou complexe ?))
+\[
+A(t) = \dfrac{\lambda}{16} \sum_{s \geq 1} \dfrac{t^s}{s^2}
+\]
+qui a un rayon de convergence de $1$.
+Et $u(t) \ll v(t)$ signifie que tous les coefficients de $u$ sont majorés en valeur absolue par les coefficients de $v$ (positifs).
+
+
