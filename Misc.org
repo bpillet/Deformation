@@ -1,0 +1,30 @@
+#+TITLE: Divers
+#+FILETAGS: Deformation
+
+
+** Approche faisceautique à la théorie de la déformation :Deformation:idee:NoteMath:
+   :PROPERTIES:
+   :commit_message: Déformer les faisceaux de fonctions
+   :END:
+ Note mathématique du [2016-08-25 jeu. 15:28]
+
+Soit $(X, \Oo_X)$ une variété complexe. Pour déformer $X$, on peut, à la Kodaira-Spencer déformer les recollements de $X$ en préservant leurs propriété d'être holomorphes. Alors par un théorème de Ehresmann, la variété $\Cc^\infty$ sous-jacente reste la même si elle était compacte.
+
+L'autre approche consiste à déformer le faisceau de fonction $\Oo_X$ en fixant la variété différentiable $(X, \Ee_X)$. Comme $\Oo_X$ est définit comme le noyau de l'opérateur $\dbarre$, on peut aussi chercher à déformer
+\[
+\dbarre : \Ee_X \longrightarrow \Ee^1_X
+\]
+parmis les morphismes de faisceaux
+- De $\Ee_X$ dans $\Ee^1_X$
+- \(\C\)-linéaire
+- satisfaisant une règle de Liebniz (ou encore est /une dérivation/)
+- de carré nulle, au sens où $\dbarre$ est étendue à $\Ee^1_X = \Ee_X(\Lambda_X)$ comme satisfaisant une règle de Liebniz.
+
+C'est donc une section du faisceau des dérivations \(\C\)-linéaires de $\Ee_X$ à valeur dans $\Ee^1_X$.
+
+Soit $H = Hom_\C(\Ee,\Ee^1)$, et $D = Der_\C(\Ee,\Ee^1)$ tout $\dbarre$ est une section globale de $D \subseteq H$.
+
+C'est donc une section lisse de $T_X \otimes \Lambda_X = End(T_X)$
+
+Une autre section donne la même structure complexe \ssi l'endomorphisme du tangent associé provient d'un difféo qui conjugue les deux structures.. ?
+
